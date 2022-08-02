@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainVC" customModule="ExpandAndCollapse" customModuleProvider="target">
+            <connections>
+                <outlet property="expandBtn" destination="naS-7S-hD7" id="JIs-Lg-Ba1"/>
+                <outlet property="tableView" destination="nLA-fH-saJ" id="9Jt-RS-bdS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tc8-VS-APp">
+                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="pAj-w4-dkq"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="Item" image="minus.circle" catalog="system" id="dqo-sE-h3n">
+                            <connections>
+                                <action selector="minusTapped:" destination="-1" id="24Q-dt-Jng"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ZEN-Ca-p6a"/>
+                        <barButtonItem title="Expand" id="naS-7S-hD7">
+                            <connections>
+                                <action selector="expendTapped:" destination="-1" id="3FW-3Q-T3W"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="pWi-7e-S3Q"/>
+                        <barButtonItem title="Item" image="plus.circle" catalog="system" id="iaR-8i-h0e">
+                            <connections>
+                                <action selector="plusTapped:" destination="-1" id="On0-1C-bBM"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tex-aj-ttx">
+                    <rect key="frame" x="0.0" y="54" width="414" height="753"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Master Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odx-ea-GGr">
+                            <rect key="frame" x="16" y="0.0" width="382" height="43"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nLA-fH-saJ">
+                            <rect key="frame" x="0.0" y="43" width="414" height="710"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="nLA-fH-saJ" firstAttribute="leading" secondItem="tex-aj-ttx" secondAttribute="leading" id="A9U-TH-CZN"/>
+                        <constraint firstItem="odx-ea-GGr" firstAttribute="leading" secondItem="tex-aj-ttx" secondAttribute="leading" constant="16" id="GdX-Hv-Eh5"/>
+                        <constraint firstAttribute="trailing" secondItem="odx-ea-GGr" secondAttribute="trailing" constant="16" id="hGv-cn-3fu"/>
+                        <constraint firstAttribute="trailing" secondItem="nLA-fH-saJ" secondAttribute="trailing" id="ulY-jk-8Ms"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tc8-VS-APp" secondAttribute="bottom" id="DZW-Rl-Rzu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tex-aj-ttx" secondAttribute="trailing" id="M4O-mP-OPk"/>
+                <constraint firstItem="tc8-VS-APp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Soq-X6-hwz"/>
+                <constraint firstItem="tex-aj-ttx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bRJ-y8-9uR"/>
+                <constraint firstItem="tc8-VS-APp" firstAttribute="top" secondItem="tex-aj-ttx" secondAttribute="bottom" constant="5" id="ggN-aR-33G"/>
+                <constraint firstItem="tex-aj-ttx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="puF-Mr-RQ3"/>
+                <constraint firstItem="tc8-VS-APp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="y04-gE-7ky"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="110"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="minus.circle" catalog="system" width="128" height="121"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
